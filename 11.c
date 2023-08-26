@@ -157,7 +157,7 @@ void reverseInOrderTraversal(struct Node* root){
     if(root!=NULL){
         reverseInOrderTraversal(root->right);
         printf("Name: %s, Age: %d, Followers: %d\n",root->user.name,root->user.age,root->user.followers);
-        reverseInnOrderTraversal(root->left);
+        reverseInOrderTraversal(root->left);
     }
 }
 
