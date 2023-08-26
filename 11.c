@@ -43,13 +43,13 @@ int main(void){
     }
 // Before deleting
     printf("Users of the social media platform:\n");
-    inOrderTraversal(root);
+    reverseInOrderTraversal(root);
 // Deleting
     struct User userToDelete={"Charlie", 22, 750};
     root=deleteNode(root, userToDelete);
 // After deleting
     printf("\nUsers of the social media platform after deletion:\n");
-    inOrderTraversal(root);
+    reverseInOrderTraversal(root);
 
     return 0;
 }
