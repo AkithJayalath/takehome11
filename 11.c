@@ -155,9 +155,9 @@ struct Node* insert(struct Node* root,struct User user){
 
 void reverseInOrderTraversal(struct Node* root){
     if(root!=NULL){
-        inOrderTraversal(root->right);
+        reverseInOrderTraversal(root->right);
         printf("Name: %s, Age: %d, Followers: %d\n",root->user.name,root->user.age,root->user.followers);
-        inOrderTraversal(root->left);
+        reverseInnOrderTraversal(root->left);
     }
 }
 
