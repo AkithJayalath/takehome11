@@ -21,7 +21,7 @@ struct Node* rotateRight(struct Node* y);
 struct Node* rotateLeft(struct Node* x);
 int getBalance(struct Node* node);
 struct Node* insert(struct Node* root,struct User user);
-void inOrderTraversal(struct Node* root);
+void reverseInOrderTraversal(struct Node* root);
 struct Node* minValueNode(struct Node* node);
 struct Node* deleteNode(struct Node* root,struct User user);
 
@@ -43,13 +43,13 @@ int main(void){
     }
 // Before deleting
     printf("Users of the social media platform:\n");
-    inOrderTraversal(root);
+    reverseInOrderTraversal(root);
 // Deleting
     struct User userToDelete={"Charlie", 22, 750};
     root=deleteNode(root, userToDelete);
 // After deleting
     printf("\nUsers of the social media platform after deletion:\n");
-    inOrderTraversal(root);
+    reverseInOrderTraversal(root);
 
     return 0;
 }
@@ -153,11 +153,11 @@ struct Node* insert(struct Node* root,struct User user){
     return root;
 }
 
-void inOrderTraversal(struct Node* root){
+void reverseInOrderTraversal(struct Node* root){
     if(root!=NULL){
-        inOrderTraversal(root->left);
+        reverseInOrderTraversal(root->right);
         printf("Name: %s, Age: %d, Followers: %d\n",root->user.name,root->user.age,root->user.followers);
-        inOrderTraversal(root->right);
+        reverseInOrderTraversal(root->left);
     }
 }
 
